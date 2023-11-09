@@ -1,0 +1,34 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    background-color: #212121;
+    border-bottom: 1px solid #454242;
+    .logo {
+        a {
+            img {
+                width: 120px;
+            }
+        }
+    }
+
+    .navigation {
+        ul {
+            display: block;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+                display: inline;
+                margin-right: 15px;
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+
+}
