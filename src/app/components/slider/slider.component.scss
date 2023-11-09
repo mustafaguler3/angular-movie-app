@@ -1,0 +1,45 @@
+.slider {
+    .slide {
+        width: 100%;
+
+        &-bg {
+            height: 35rem;
+            position: relative;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+            &::after {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: '';
+                width: 100%;
+                height: 100%;
+                display: block;
+                background-color: linear-gradient(99deg,rgba(0,0,0,1) 0%,
+                rgba(0,0,0,1) 11%,rgba(255,255,255,0) 100%);
+            }
+        }
+
+        &-pane {
+            position: absolute;
+            top: 5rem;
+            left: 5rem;
+            color: white;
+
+            .title {
+                font-size: 2.5rem;
+            }
+            .meta {
+                font-size: 1.2rem;
+            }
+        }
+    }
+}
+
+.pi {
+    color: orange;
+    margin-right: 10px;
+}
