@@ -8,6 +8,9 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { SliderComponent } from './components/slider/slider.component';
+import { MovieService } from './services/movie.service';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 
 @NgModule({
   declarations: [
@@ -20,7 +23,9 @@ import { SliderComponent } from './components/slider/slider.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

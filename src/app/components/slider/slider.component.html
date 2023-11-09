@@ -1,29 +1,35 @@
-<div class="slider">
-    <div class="slide">
-        <div class="slide-bg">
-            <img src="" alt="">
-        </div>
+<div class="slider" *ngIf="movies$ | async as movies">
+    <ng-container *ngFor="let movie of movies.results; let movieIndex = index">
+    <div class="slide" *ngIf="movieIndex === slideIndex" @slideFade>
+        
 
-        <div class="slide-pane">
-            <h2 class="title">Slider Title</h2>
-            <div class="meta mb-4">
-                <div class="rating mb-1">
-                    <i class="pi pi-star-fill"></i>
-                    <span>9.0</span>
-                    <span>/10</span>
+            <div class="slide-bg">
+                <img [src]="'https://image.tmdb.org/t/p/original/' + movie.backdrop_path " alt="">
+            </div>
+    
+            <div class="slide-pane">
+                <h2 class="title">{{ movie.original_title }}</h2>
+                <div class="meta mb-4">
+                    <div class="rating mb-1">
+                        <i class="pi pi-star-fill"></i>
+                        <span>{{ movie.vote_average }}</span>
+                        <span>/10</span>
+                    </div>
+                    <div class="votes">
+                        <i class="pi pi-users"></i>
+                        <span>{{ movie.vote_count }}</span>
+                    </div>
+    
+                    <div class="release-date">
+                        <i class="pi pi-calendar"></i>
+                        <span>{{ movie.release_date | date: 'yyyy'}}</span>
+                    </div>
                 </div>
-                <div class="votes">
-                    <i class="pi pi-users"></i>
-                    <span>4435</span>
-                </div>
-
-                <div class="release-date">
-                    <i class="pi pi-calendar"></i>
-                    <span>9.11.2023</span>
-                </div>
+    
+                <div class="description">{{ movie.overview }}</div>
             </div>
 
-            <div class="description">some text</div>
-        </div>
+        
     </div>
+</ng-container>
 </div>
