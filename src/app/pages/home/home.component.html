@@ -7,3 +7,7 @@
 <ng-container *ngIf="topRatedMovies$ | async as topRatedMovies">
     <app-banner [title]="'Top Rated Movies'" [shows]="topRatedMovies"></app-banner>
 </ng-container>
+
+<ng-container *ngIf="popularTvshows$ | async as popularTvshows">
+    <app-banner [title]="'Popular Tv Shows'" [shows]="popularTvshows"></app-banner>
+</ng-container>

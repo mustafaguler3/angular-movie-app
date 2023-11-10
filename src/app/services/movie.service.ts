@@ -9,7 +9,7 @@ import { map } from 'rxjs';
 export class MovieService {
 
   private apiUrl = "https://api.themoviedb.org/3";
-  private apiKey = ""
+  private apiKey = "f260570b610e1483f1c983a5b3e2a2e6"
 
   constructor(private http: HttpClient) { }
 
