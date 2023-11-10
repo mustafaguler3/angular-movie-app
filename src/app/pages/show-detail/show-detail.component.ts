@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import { IMAGES_SIZES } from 'src/app/constants/images-sizes';
 import { MovieService } from 'src/app/services/movie.service';
 import { Movie } from 'src/app/types/movie';
+import { Video } from 'src/app/types/video';
 
 @Component({
   selector: 'app-show-detail',
@@ -14,7 +16,10 @@ export class ShowDetailComponent implements OnInit{
   showId = "";
 
   show$: Observable<Movie> | null = null
+  showVideos$: Observable<Video[]> | null = null;
 
+  imagesSizes = IMAGES_SIZES;
+  
   constructor(private route: ActivatedRoute,
               private movieService: MovieService){}
 
@@ -24,5 +29,6 @@ export class ShowDetailComponent implements OnInit{
       }) */
       this.showId = this.route.snapshot.params['id']
       this.show$ = this.movieService.getMovieById(this.showId);
+      this.showVideos$ = this.movieService.getMovieVideos(this.showId)
   }
 }
