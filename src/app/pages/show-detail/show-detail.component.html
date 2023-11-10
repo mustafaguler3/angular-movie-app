@@ -69,10 +69,14 @@
         </ng-container>
     </p-tabPanel>
     <p-tabPanel header="Photos">
-        <p>
-            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa
-            qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
-        </p>
+        <ng-container *ngIf="showImages$ | async as showImages">
+            <div class="grid">
+                <div class="col-2" *ngFor="let showImage of showImages">
+
+                    <p-image [src]="imagesSizes.large + showImage.file_path" alt="Image" width="100%" [preview]="true"></p-image>
+                </div>
+            </div>
+        </ng-container>
     </p-tabPanel>
 </p-tabView>
 
