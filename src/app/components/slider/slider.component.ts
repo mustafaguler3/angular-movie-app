@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http"
 import { MovieService } from 'src/app/services/movie.service';
 import { Movie, MoviesDto } from 'src/app/types/movie';
@@ -17,6 +17,8 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 })
 export class SliderComponent implements OnInit{
 
+  @Input() slides: Movie[] = []
+  @Input() isHeader = false;
 
   constructor(private movieService:MovieService){}
 
@@ -25,7 +27,9 @@ export class SliderComponent implements OnInit{
   slideIndex = 0;
 
   ngOnInit(): void {
+    if(!this.isHeader){
       this.changeSlide()
+    }
   }
 
   changeSlide(){

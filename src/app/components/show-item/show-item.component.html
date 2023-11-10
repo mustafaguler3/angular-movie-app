@@ -1,4 +1,4 @@
-<a class="show-item" *ngIf="showItem">
+<a class="show-item" *ngIf="showItem" [routerLink]="'detail/' +showItem.id">
     <div class="show-item-rating">
         <i class="pi pi-star"></i>
         <span>{{ showItem.vote_average }} /10</span>

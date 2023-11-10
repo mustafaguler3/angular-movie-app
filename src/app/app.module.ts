@@ -12,7 +12,8 @@ import { MovieService } from './services/movie.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BannerComponent } from './components/banner/banner.component';
-import { ShowItemComponent } from './components/show-item/show-item.component'
+import { ShowItemComponent } from './components/show-item/show-item.component';
+import { ShowDetailComponent } from './pages/show-detail/show-detail.component'
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ShowItemComponent } from './components/show-item/show-item.component'
     MovieListComponent,
     SliderComponent,
     BannerComponent,
-    ShowItemComponent
+    ShowItemComponent,
+    ShowDetailComponent
   ],
   imports: [
     BrowserModule,
