@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { IMAGES_SIZES } from 'src/app/constants/images-sizes';
 import { MovieService } from 'src/app/services/movie.service';
+import { Actor } from 'src/app/types/credits';
 import { Image } from 'src/app/types/image';
 import { Movie } from 'src/app/types/movie';
 import { Video } from 'src/app/types/video';
@@ -19,6 +20,7 @@ export class ShowDetailComponent implements OnInit{
   show$: Observable<Movie> | null = null
   showVideos$: Observable<Video[]> | null = null;
   showImages$: Observable<Image[]> | null = null;
+  showCast$: Observable<Actor[]> | null = null;
 
   imagesSizes = IMAGES_SIZES;
   
@@ -33,5 +35,6 @@ export class ShowDetailComponent implements OnInit{
       this.show$ = this.movieService.getMovieById(this.showId);
       this.showVideos$ = this.movieService.getMovieVideos(this.showId)
       this.showImages$ = this.movieService.getMovieImages(this.showId)
+      this.showCast$ = this.movieService.getMovieCast(this.showId)
   }
 }

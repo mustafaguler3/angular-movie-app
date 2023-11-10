@@ -80,4 +80,27 @@
     </p-tabPanel>
 </p-tabView>
 
+<ng-container *ngIf="showCast$ | async as actors">
+    <p-carousel [value]="actors" 
+    [numVisible]="6" 
+    [numScroll]="3" 
+    [circular]="false">
+
+    <ng-template let-actor pTemplate="item">
+        <div class="actor">
+            <img *ngIf="actor.profile_path; else defaultActorPhoto" 
+            [src]="imagesSizes.medium + actor.profile_path" alt="">
+            <div>{{actor.character}}</div>
+            <div>{{actor.name}}</div>
+        </div>
+    </ng-template>
+        
+    </p-carousel>
+    
 </ng-container>
+
+</ng-container>
+
+<ng-template #defaultActorPhoto>
+    <img src="assets/images/no-picture.png" alt="">
+</ng-template>
