@@ -20,7 +20,7 @@ export class SliderComponent implements OnInit{
 
   constructor(private movieService:MovieService){}
 
-  movies$ = this.movieService.getPopularMovies()
+  movies$ = this.movieService.getMoviesByType("popular",6)
 
   slideIndex = 0;
 

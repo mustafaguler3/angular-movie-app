@@ -1,0 +1,43 @@
+.show-item {
+    display: block;
+    height: 425px;
+    position: relative;
+    border-radius: 5px;
+    border: 1px solid #999;
+    &-image {
+      height: 375px;
+      img {
+        width: 100%;
+        border-radius: 5px 5px 0 0;
+        height: 375px;
+        object-fit: cover;
+      }
+    }
+    &-rating {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      top: 10px;
+      left: 10px;
+      background-color: black;
+      border-radius: 5px;
+      padding: 5px 10px;
+  
+      .pi {
+        font-size: 1.2rem;
+        color: orange;
+        margin-right: 5px;
+      }
+    }
+  
+    &-title {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      height: 48px;
+      background-color: black;
+      border-radius: 0 0 5px 5px;
+      padding: 0 10px;
+    }
+  }
+  

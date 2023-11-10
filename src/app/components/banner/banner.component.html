@@ -1,0 +1,8 @@
+<div class="banner container" *ngIf="shows">
+    <h1>{{ title }}</h1>
+    <div class="grid">
+        <div class="col-2" *ngFor="let show of shows">
+            <app-show-item [showItem]="show"></app-show-item>
+        </div>
+    </div>
+</div>

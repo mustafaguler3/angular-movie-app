@@ -1,0 +1,11 @@
+<a class="show-item" *ngIf="showItem">
+    <div class="show-item-rating">
+        <i class="pi pi-star"></i>
+        <span>{{ showItem.vote_average }} /10</span>
+    </div>
+
+    <div class="show-item-image">
+        <img src="{{ 'https://image.tmdb.org/t/p/original/' +showItem.backdrop_path }}" alt="">
+    </div>
+    <div class="show-item-title">{{ showItem.original_title }}</div>
+</a>
