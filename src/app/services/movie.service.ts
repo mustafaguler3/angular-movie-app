@@ -12,7 +12,7 @@ import { CreditDto } from '../types/credits';
 export class MovieService {
 
   private apiUrl = "https://api.themoviedb.org/3";
-  private apiKey = ""
+  private apiKey = "your api"
 
   constructor(private http: HttpClient) { }
 
@@ -38,5 +38,11 @@ export class MovieService {
   getMovieCast(id: string){
     return this.http.get<CreditDto>(`${this.apiUrl}/movie/${id}/credits?api_key=${this.apiKey}`)
     .pipe(map(data => data.cast))
+  }
+
+  searchMovies(page: number,searchValue?: string){
+    const uri = searchValue ? "search/movie" : "movie/popular"
+    return this.http.get<MoviesDto>(`${this.apiUrl}/${uri}?query=${searchValue}&page=${page}&?api_key=${this.apiKey}`)
+    
   }
 }
