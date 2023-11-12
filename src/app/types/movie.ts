@@ -18,8 +18,11 @@ export type Movie = {
 }
 
 export type Genre = {
-    id: number
+    id: string
     name: string
+}
+export type GenreDto = {
+    genres: Genre[]
 }
 
 export type MoviesDto = {
@@ -28,3 +31,4 @@ export type MoviesDto = {
     total_pages: number
     total_results: number
 }
+

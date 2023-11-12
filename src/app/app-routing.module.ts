@@ -4,11 +4,14 @@ import { HomeComponent } from './pages/home/home.component';
 import { MovieListComponent } from './pages/movie-list/movie-list.component';
 import { ShowDetailComponent } from './pages/show-detail/show-detail.component';
 import { ShowListComponent } from './pages/show-list/show-list.component';
+import { GenresComponent } from './pages/genres/genres.component';
 
 const routes: Routes = [
   {path:"",component:HomeComponent},
   {path:"list",component:ShowListComponent},
-  {path:"detail/:id/:type",component: ShowDetailComponent}
+  {path:"detail/:id/:type",component: ShowDetailComponent},
+  {path:"genres",component:GenresComponent},
+  {path:"genres/:genreId",component:GenresComponent}
 ];
 
 @NgModule({

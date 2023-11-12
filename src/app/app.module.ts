@@ -23,6 +23,7 @@ import { ShowListComponent } from './pages/show-list/show-list.component'
 import { InputTextModule } from 'primeng/inputtext';
 import { FormsModule } from '@angular/forms';
 import { PaginatorModule } from 'primeng/paginator';
+import { GenresComponent } from './pages/genres/genres.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { PaginatorModule } from 'primeng/paginator';
     ShowItemComponent,
     ShowDetailComponent,
     VideoEmbedComponent,
-    ShowListComponent
+    ShowListComponent,
+    GenresComponent
   ],
   imports: [
     BrowserModule,

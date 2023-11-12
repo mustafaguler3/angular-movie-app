@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Movie, MoviesDto } from '../types/movie';
+import { GenreDto, Movie, MoviesDto } from '../types/movie';
 import { map } from 'rxjs';
 import { VideoDto } from '../types/video';
 import { ImagesDto } from '../types/image';
@@ -12,7 +12,7 @@ import { CreditDto } from '../types/credits';
 export class MovieService {
 
   private apiUrl = "https://api.themoviedb.org/3";
-  private apiKey = "your api"
+  private apiKey = ""
 
   constructor(private http: HttpClient) { }
 
@@ -44,5 +44,15 @@ export class MovieService {
     const uri = searchValue ? "search/movie" : "movie/popular"
     return this.http.get<MoviesDto>(`${this.apiUrl}/${uri}?query=${searchValue}&page=${page}&?api_key=${this.apiKey}`)
     
+  }
+
+  getMovieGenres(){
+    return this.http.get<GenreDto>(`${this.apiUrl}/genre/movie/list?api_key=${this.apiKey}`)
+    .pipe(map(data => data.genres))
+  }
+
+  getMovieByGenre(genreId:string,pageNumber = 1){
+    return this.http.get<MoviesDto>(`${this.apiUrl}/discover/movie?with_genres=${genreId}&page=${pageNumber}?api_key=${this.apiKey}`)
+    .pipe(map(data => data.results))
   }
 }
